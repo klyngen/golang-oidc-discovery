@@ -7,7 +7,7 @@ This package covers two needs:
 
 ## Usage
 
-`go
+```go
 package main
 
 import (
@@ -30,6 +30,7 @@ client, \_ := new oidcdiscovery.NewOidcDiscoveryClient("https://your-oidc-provid
     publicKeys[0].Key;
 
 }
-`
+
+```
 
 Happy hacking
