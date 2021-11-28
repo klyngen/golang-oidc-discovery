@@ -1,6 +1,7 @@
-package main
+package oidcdiscovery
 
-type Discovery struct {
+// DiscoveryDocument is the discovery document structure
+type DiscoveryDocument struct {
 	RequestParameterSupported                  bool     `json:"request_parameter_supported"`
 	IDTokenEncryptionAlgValuesSupported        []string `json:"id_token_encryption_alg_values_supported"`
 	RegistrationEndpoint                       string   `json:"registration_endpoint"`
@@ -33,4 +34,19 @@ type Discovery struct {
 	Issuer                                     string   `json:"issuer"`
 	OpPolicyURI                                string   `json:"op_policy_uri"`
 	ClaimsSupported                            []string `json:"claims_supported"`
+}
+
+// JwksEndpointResponse is the response from the JWKS-endoint
+type JwksEndpointResponse struct {
+	Keys []struct {
+		Kid     string   `json:"kid"`
+		Kty     string   `json:"kty"`
+		Alg     string   `json:"alg"`
+		Use     string   `json:"use"`
+		N       string   `json:"n"`
+		E       string   `json:"e"`
+		X5C     []string `json:"x5c"`
+		X5T     string   `json:"x5t"`
+		X5TS256 string   `json:"x5t#S256"`
+	} `json:"keys"`
 }
