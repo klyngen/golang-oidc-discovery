@@ -16,7 +16,7 @@ import (
 )
 
 func main() {
-client, \_ := new oidcdiscovery.NewOidcDiscoveryClient("https://your-oidc-provider.com")
+    client, _ := oidcdiscovery.NewOidcDiscoveryClient("https://your-oidc-provider.com")
 
     // Now that you have all the good stuff you can do whatever you want
 
